@@ -1,0 +1,96 @@
+{
+  "categories": [
+    {
+      "catid": "cat1",
+      "title": "vegetable & fruits"
+    },
+    {
+      "catid": "cat2",
+      "title": "breads & dairy"
+    },
+    {
+      "catid": "cat3",
+      "title": "snacks"
+    },
+    {
+      "catid": "cat4",
+      "title": "cleaning and household"
+    }
+  ],
+  "sub-cat": {
+    "cat1": [
+      {
+        "subcatid": "subcat1",
+        "name": "vegetables"
+      },
+      {
+        "subcatid": "subcat2",
+        "name": "fruits"
+      }
+    ]
+  },
+  "items": {
+    "subcat1": [
+      {
+        "itemid": "item1",
+        "item": "cucumber",
+        "color" : "#00B121",
+        "options" : "large",
+        "skuid" : "SKU02596052",
+        "stocks" : "24"
+      },
+      {
+        "itemid": "item2",
+        "item": "green chilli",
+        "color" : "#00B121",
+        "options" : "large",
+        "skuid" : "SKU02596052",
+        "stocks" : "24"
+      },
+      {
+        "itemid": "item3",
+        "item": "carrot",
+        "color" : "#00B121",
+        "options" : "large",
+        "skuid" : "SKU02596052",
+        "stocks" : "24"
+      },
+      {
+        "itemid": "item4",
+        "item": "potato",
+        "color" : "#00B121",
+        "options" : "large",
+        "skuid" : "SKU02596052",
+        "stocks" : "24"
+      }
+    ],
+    "subcat2": [
+        {
+          "itemid": "item1",
+          "item": "pineapple",
+          "color" : "#00B121",
+          "options" : "large",
+          "skuid" : "SKU02596052",
+          "stocks" : "24"
+        },
+        {
+          "itemid": "item2",
+          "item": "banana",
+          "color" : "#00B121",
+          "options" : "large",
+          "skuid" : "SKU02596052",
+          "stocks" : "24"
+        },
+        {
+          "itemid": "item3",
+          "item": "green apple",
+          "color" : "#00B121",
+          "options" : "large",
+          "skuid" : "SKU02596052",
+          "stocks" : "24"
+        }
+      ]
+
+  }
+
+}

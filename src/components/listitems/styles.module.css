@@ -1,0 +1,37 @@
+ul.itemrow {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  padding: 13px 40px;
+  background-color: #ffffff;
+}
+
+ul.itemrow li {
+  justify-self: center;
+  color: #333333;
+  font-family: "Open Sans";
+  font-size: 14px;
+}
+
+.stocksField{
+  border-radius: 20px;
+  background-color: #F3F3F3;
+  padding: 6px 15px;
+  width: 104px;
+  outline: none;
+}
+
+ul.itemrow li:nth-child(1) {
+  justify-self: flex-start;
+}
+
+
+li img {
+  height: 20px;
+  width: 20px;
+}
+
+span.errMsg{
+  color: #ff0000;
+  font-size: 1em;
+}

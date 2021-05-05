@@ -1,0 +1,42 @@
+.searchBox {
+  margin: 51px 0;
+}
+
+input {
+  padding: 0 10px;
+  outline: none;
+  border: none;
+  width: 200px;
+  background: none;
+}
+
+.boxGroup {
+  background-color: #f3f3f3;
+  display: inline;
+  padding: 15px 10px;
+  margin-right: 10px;
+  border-radius: 30px;
+}
+
+.boxGroup span {
+  width: 18px;
+  height: 18px;
+  opacity: 0.5;
+  background-color: #565656;
+  padding: 3px 7px;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+button {
+  width: 90px;
+  background-color: #157bf9;
+  color: #ffffff;
+  padding: 14px 18px;
+  outline: none;
+  border: 1px solid #157bf9;
+  border-radius: 30px;
+  font-family: "Open Sans";
+  font-size: 14px;
+  letter-spacing: 0;
+}

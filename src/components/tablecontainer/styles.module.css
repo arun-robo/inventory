@@ -1,0 +1,21 @@
+.tableContainer {
+  width: 1739px;
+  margin: 0 auto;
+  background-color : #FCFBFC
+}
+
+ul.columnName {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+}
+
+ul.columnName li {
+  color: #a9b1c3;
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.09px;
+  justify-self: center;
+  margin: 16px 0;
+}

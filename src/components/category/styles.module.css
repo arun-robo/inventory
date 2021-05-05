@@ -1,0 +1,44 @@
+.category {
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
+  margin: 11px 0;
+}
+.category h2 {
+  color: #333333;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  padding: 16px 20px;
+}
+
+.heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) ;
+  justify-items:flex-start;
+  align-items: center;
+  color : #7C7C7C
+}
+
+.actions span{
+  font-size: 1.7em;
+  cursor: pointer;
+}
+
+.collapse{
+  height: 0;
+  overflow: hidden;
+}
+
+
+
+.blueColor{
+  color: #157BF9;
+}

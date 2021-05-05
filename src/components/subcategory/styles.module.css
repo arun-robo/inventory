@@ -1,0 +1,39 @@
+.subCat {
+  background-color: #fcfbfc;
+}
+
+.subCat h3 {
+  color: #333333;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin: 16px 40px;
+  padding: 10px 0;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: flex-start;
+  align-items: center;
+  color: #7c7c7c;
+}
+
+.actions span {
+  font-size: 1.7em;
+
+  cursor: pointer;
+}
+
+.collapse{
+    height: 0;
+    overflow: hidden;
+}
