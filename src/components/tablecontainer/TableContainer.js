@@ -23,21 +23,23 @@ export default function TableContainer() {
   return (
     <div className={s.tableContainer}>
       <SearchBox />
-      <ul className={s.columnName}>
-        <li>ITEM NAME</li>
-        <li>COLOR</li>
-        <li>OPTIONS</li>
-        <li>SKU ID</li>
-        <li>STOCKS</li>
-        <li></li>
-        <li>ACTIONS</li>
-      </ul>
+      <div className={s.columnName}>
+        <p>ITEM NAME</p>
+        <p>COLOR</p>
+        <p>OPTIONS</p>
+        <p>SKU ID</p>
+        <p>STOCKS</p>
+        <p></p>
+        <p>ACTIONS</p>
+      </div>
       {categories &&
         categories.map((category, index) => {
           return (
             <Category
-              key={category.catid}
-              category={category}
+              key={category.id}
+              categoryid={category.id}
+              title={category.title}
+              availability={category.availability}
               expand={index === 0 ? true : false}
             />
           );

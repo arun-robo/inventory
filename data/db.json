@@ -1,96 +1,122 @@
 {
   "categories": [
     {
-      "catid": "cat1",
-      "title": "vegetable & fruits"
+      "id": 1,
+      "title": "vegetable & fruits",
+      "availability": false
     },
     {
-      "catid": "cat2",
-      "title": "breads & dairy"
+      "id": 2,
+      "title": "breads & dairy",
+      "availability": true
     },
     {
-      "catid": "cat3",
-      "title": "snacks"
+      "id": 3,
+      "title": "snacks",
+      "availability": true
     },
     {
-      "catid": "cat4",
-      "title": "cleaning and household"
+      "id": 4,
+      "title": "cleaning and household",
+      "availability": true
     }
   ],
-  "sub-cat": {
-    "cat1": [
-      {
-        "subcatid": "subcat1",
-        "name": "vegetables"
-      },
-      {
-        "subcatid": "subcat2",
-        "name": "fruits"
-      }
-    ]
-  },
-  "items": {
-    "subcat1": [
-      {
-        "itemid": "item1",
-        "item": "cucumber",
-        "color" : "#00B121",
-        "options" : "large",
-        "skuid" : "SKU02596052",
-        "stocks" : "24"
-      },
-      {
-        "itemid": "item2",
-        "item": "green chilli",
-        "color" : "#00B121",
-        "options" : "large",
-        "skuid" : "SKU02596052",
-        "stocks" : "24"
-      },
-      {
-        "itemid": "item3",
-        "item": "carrot",
-        "color" : "#00B121",
-        "options" : "large",
-        "skuid" : "SKU02596052",
-        "stocks" : "24"
-      },
-      {
-        "itemid": "item4",
-        "item": "potato",
-        "color" : "#00B121",
-        "options" : "large",
-        "skuid" : "SKU02596052",
-        "stocks" : "24"
-      }
-    ],
-    "subcat2": [
-        {
-          "itemid": "item1",
-          "item": "pineapple",
-          "color" : "#00B121",
-          "options" : "large",
-          "skuid" : "SKU02596052",
-          "stocks" : "24"
-        },
-        {
-          "itemid": "item2",
-          "item": "banana",
-          "color" : "#00B121",
-          "options" : "large",
-          "skuid" : "SKU02596052",
-          "stocks" : "24"
-        },
-        {
-          "itemid": "item3",
-          "item": "green apple",
-          "color" : "#00B121",
-          "options" : "large",
-          "skuid" : "SKU02596052",
-          "stocks" : "24"
-        }
-      ]
-
-  }
-
+  "subcategories": [
+    {
+      "id": 1,
+      "title": "vegetables",
+      "categoryid": 1,
+      "availability": true
+    },
+    {
+      "id": 2,
+      "title": "fruits",
+      "categoryid": 1,
+      "availability": false
+    },
+    {
+      "id": 3,
+      "title": "bread",
+      "categoryid": 2,
+      "availability": true
+    },
+    {
+      "id": 4,
+      "title": "dairy",
+      "categoryid": 2,
+      "availability": true
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "item": "cucumber",
+      "color": "#00B121",
+      "options": "large",
+      "skuid": "SKU02596052",
+      "stocks": "unlimited",
+      "subcategoryid": 1,
+      "categoryid": 1
+    },
+    {
+      "id": 2,
+      "item": "green chilli",
+      "color": "#00B121",
+      "options": "large",
+      "skuid": "SKU02596052",
+      "stocks": "unlimited",
+      "subcategoryid": 1,
+      "categoryid": 1
+    },
+    {
+      "id": 3,
+      "item": "carrot",
+      "color": "#00B121",
+      "options": "large",
+      "skuid": "SKU02596052",
+      "stocks": "24",
+      "subcategoryid": 1,
+      "categoryid": 1
+    },
+    {
+      "id": 4,
+      "item": "potato",
+      "color": "#00B121",
+      "options": "large",
+      "skuid": "SKU02596052",
+      "stocks": "24",
+      "subcategoryid": 1,
+      "categoryid": 1
+    },
+    {
+      "id": 5,
+      "item": "pineapple",
+      "color": "#00B121",
+      "options": "large",
+      "skuid": "SKU02596052",
+      "stocks": "24",
+      "subcategoryid": 2,
+      "categoryid": 1
+    },
+    {
+      "id": 6,
+      "item": "banana",
+      "color": "#00B121",
+      "options": "large",
+      "skuid": "SKU02596052",
+      "stocks": "24",
+      "subcategoryid": 2,
+      "categoryid": 1
+    },
+    {
+      "id": 7,
+      "item": "green apple",
+      "color": "#00B121",
+      "options": "large",
+      "skuid": "SKU02596052",
+      "stocks": "24",
+      "subcategoryid": 2,
+      "categoryid": 1
+    }
+  ]
 }

@@ -3,33 +3,52 @@ import SubCategory from "../subcategory/SubCategory";
 import ToggleButton from "../togglebutton/ToggleButton";
 import s from "./styles.module.css";
 
-export default function Category({ category, expand }) {
+export default function Category({ categoryid, title, expand, availability }) {
+
   const [subcategories, setSubCategories] = useState(null);
   const [isExpanded, setIsExpanded] = useState(expand);
 
   useEffect(() => {
-    fetch("http://localhost:8000/sub-cat/")
+    fetch("http://localhost:8000/subcategories?categoryid=" + categoryid, {
+      method: "GET",
+    })
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        if (data[category.catid]) {
-          // console.log("subcat exists",data[category.catid]);
-          setSubCategories(data[category.catid]);
-        }
+        data.length && setSubCategories(data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
 
+  const toggleAvailability = (s) =>{
+
+    const data = {
+      availability : s
+    }
+
+    fetch("http://localhost:8000/categories/"+categoryid,{
+      method: "PATCH",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => {
+        console.log("category availability updated");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   return (
     <div className={s.category}>
       <div className={s.heading}>
-        <h2>{category.title}</h2>
+        <h2>{title}</h2>
         <div className={s.actions}>
           <p>Availability</p>
-          <ToggleButton />
+          <ToggleButton availability={availability} toggleAvailability={toggleAvailability} />
           <span
             className={isExpanded ? s.blueColor : ""}
             onClick={() => setIsExpanded(!isExpanded)}
@@ -43,8 +62,10 @@ export default function Category({ category, expand }) {
           subcategories.map((subcategory, index) => {
             return (
               <SubCategory
-                key={subcategory.subcatid}
-                subcategory={subcategory}
+                key={subcategory.id}
+                subcategoryid={subcategory.id}
+                title={subcategory.title}
+                availability={subcategory.availability}
                 expand={index === 0 ? true : false}
               />
             );
