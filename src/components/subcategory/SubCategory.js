@@ -1,32 +1,46 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import ListItems from "../listitems/ListItems";
 import ToggleButton from "../togglebutton/ToggleButton";
 import s from "./styles.module.css";
 
-export default function SubCategory({ subcategoryid, title, expand, availability }) {
+export default function SubCategory({
+  subcategoryid,
+  title,
+  expand,
+  availability,
+}) {
   const [items, setItems] = useState(null);
   const [isExpanded, setIsExpanded] = useState(expand);
 
+  const param = useSelector((state) => state.search.searchParam);
+
   useEffect(() => {
-    fetch("http://localhost:8000/items?subcategoryid=" + subcategoryid)
+    console.log("param,changed", param);
+
+    const url = `http://localhost:8000/items?subcategoryid=${subcategoryid}${
+      param ? `&item_like=${param}` : ""
+    }`;
+
+    fetch(url)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        data.length && setItems(data);
+        if (data.length) setItems(data);
+        else setItems(data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [param]);
 
-  const toggleAvailability = (s) =>{
-
+  const toggleAvailability = (s) => {
     const data = {
-      availability : s
-    }
+      availability: s,
+    };
 
-    fetch("http://localhost:8000/subcategories/"+subcategoryid,{
+    fetch("http://localhost:8000/subcategories/" + subcategoryid, {
       method: "PATCH",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
@@ -37,7 +51,7 @@ export default function SubCategory({ subcategoryid, title, expand, availability
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
 
   return (
     <div className={s.subCat}>
@@ -45,7 +59,10 @@ export default function SubCategory({ subcategoryid, title, expand, availability
         <h3>{title}</h3>
         <div className={s.actions}>
           <p>Availability</p>
-          <ToggleButton availability={availability} toggleAvailability={toggleAvailability} />
+          <ToggleButton
+            availability={availability}
+            toggleAvailability={toggleAvailability}
+          />
           <span
             className={isExpanded ? s.blueColor : ""}
             onClick={() => setIsExpanded(!isExpanded)}

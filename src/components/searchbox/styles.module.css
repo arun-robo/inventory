@@ -26,6 +26,7 @@ input {
   padding: 3px 7px;
   border-radius: 50%;
   color: #ffffff;
+  cursor: pointer;
 }
 
 button {
